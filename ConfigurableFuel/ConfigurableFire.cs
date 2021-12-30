@@ -23,7 +23,7 @@ namespace ConfigurableFire
         private void Awake()
         {
             context = this;
-            allNoFuel = Config.Bind<bool>("00_General", "all_Nofuel", false, "Allow all fires to burn without fuel");
+            allNoFuel = Config.Bind<bool>("00_General", "all_Nofuel", true, "Allow all fires to burn without fuel");
             dropFuel = Config.Bind<bool>("00_General", "dropFuel", true, "Allow for used fuel over the start fuel count to drop on break");
             extinguishableFires = Config.Bind<bool>("00_General", "ExtinguishableFires", true, "Allow all fires to be extinguishable");
             toggleFireKey = Config.Bind<string>("00_General", "toggleFireKey", "G", "Modifier key to toggle fires on and off. Use https://docs.unity3d.com/Manual/ConventionalGameInput.html");
@@ -31,7 +31,7 @@ namespace ConfigurableFire
             modEnabled = Config.Bind<bool>("00_General", "Enabled", true, "Enable this mod");
             if (!modEnabled.Value) return;
 
-            Config.Bind<bool>("01_fire_pit", "fire_pit_NoFuel", false, "Allow Fire Pit to burn without fuel");
+            Config.Bind<bool>("01_fire_pit", "fire_pit_NoFuel", true, "Allow Fire Pit to burn without fuel");
             Config.Bind<string>("01_fire_pit", "fire_pit_FuelType", "Wood", "Fuel type for Fire Pit. Swap with any Prefab Name https://github.com/Valheim-Modding/Wiki/wiki/ObjectDB-Table");
             Config.Bind<float>("01_fire_pit", "fire_pit_MaxFuel", 10f, "Maximum fuel level for Fire Pit");
             Config.Bind<float>("01_fire_pit", "fire_pit_StartFuel", 1f, "Start fuel level for Fire Pit");
