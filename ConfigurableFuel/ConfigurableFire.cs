@@ -23,7 +23,7 @@ namespace ConfigurableFire
         private void Awake()
         {
             context = this;
-            allNoFuel = Config.Bind<bool>("00_General", "all_Nofuel", false, "Allow all fires to burn without fuel");
+            allNoFuel = Config.Bind<bool>("00_General", "all_Nofuel", true, "Allow all fires to burn without fuel");
             dropFuel = Config.Bind<bool>("00_General", "dropFuel", true, "Allow for used fuel over the start fuel count to drop on break");
             extinguishableFires = Config.Bind<bool>("00_General", "ExtinguishableFires", true, "Allow all fires to be extinguishable");
             toggleFireKey = Config.Bind<string>("00_General", "toggleFireKey", "G", "Modifier key to toggle fires on and off. Use https://docs.unity3d.com/Manual/ConventionalGameInput.html");
